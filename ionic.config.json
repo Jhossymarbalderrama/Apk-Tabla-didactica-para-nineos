@@ -1,0 +1,7 @@
+{
+  "name": "Juego para niños",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
