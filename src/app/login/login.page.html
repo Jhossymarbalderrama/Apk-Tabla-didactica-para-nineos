@@ -1,0 +1,62 @@
+<ion-content padding>
+    <div class="page_Titulo" align="center">
+      Iniciar Sesión
+    </div>
+    <div class="logoLogin" align="center">
+      <img class="IconLogin" src="../../assets/img/IconoConFondo.png" width="170px" height="170px">
+    </div>
+    <div class="page_Titulo_Juego" align="center">
+      Juegos
+    </div>
+
+    <label style="padding-left: 20px;padding-top: 10px;">Acceso Rápido:</label>
+    <div class="wrapper">
+      <input type="radio" name="select" id="option-1" (click)="autoLogin(1)">
+      <input type="radio" name="select" id="option-2" (click)="autoLogin(2)">
+      <input type="radio" name="select" id="option-3" (click)="autoLogin(3)">
+        <label for="option-1" class="option option-1">
+          <div class="dot"></div>
+           <span>Pepe</span>
+           </label>
+        <label for="option-2" class="option option-2">
+          <div class="dot"></div>
+           <span>Pedro</span>
+        </label>
+        <label for="option-3" class="option option-3">
+          <div class="dot"></div>
+           <span>José</span>
+        </label>
+     </div>
+
+    <div class="boxInputs" align="center" style="margin-bottom: 25px;">
+      <ion-item class="inputsR">
+        <ion-label>
+          Correo
+        </ion-label>
+        <ion-input id="email" placeholder="ejempló@gmail.com" #email="ngModel" type="email" [(ngModel)]="user.email" required></ion-input>
+      </ion-item>
+
+      <span id="span_email" style="font-weight: bold;" *ngIf="email.touched && !email.valid && spanCorreo">
+        *Ingrese Correo.
+      </span>
+      <ion-item class="inputsR">
+        <ion-label>
+          Contraseña
+        </ion-label>
+        <ion-input id="password" placeholder="Contraseña" #password="ngModel" type="password" [(ngModel)]="user.password"  required></ion-input>
+      </ion-item>
+      
+      <span id="span_password" style="font-weight: bold;" *ngIf="password.touched && !password.valid && spanPassw">
+        *Ingrese Contraseña.
+      </span>
+    </div>
+
+    <div class="box" (click)="onLogin()" align="center">
+      <div class="botton_login">INICIAR SESIÓN</div>
+    </div>  
+  
+
+  <div *ngIf="!load" class="spinner"></div>
+</ion-content>
+
+

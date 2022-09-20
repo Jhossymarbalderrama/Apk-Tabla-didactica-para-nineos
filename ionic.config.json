@@ -1,7 +1,8 @@
 {
   "name": "Juego para niños",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

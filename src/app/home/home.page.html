@@ -1,20 +1,109 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" align="center">
+    <div class="wrapper" style="width: 100%;margin-left: 5%;" align="center">
+        <div style="width: 30%;" align="center">                 
+          <ion-fab style="padding-top: 5px;">
+            <ion-fab-button color="light"  style="height: 80px;width: 80px;">           
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+              <div [style.display]="colores ? 'flex' : 'none'">
+                <img src="../../assets/img/Colores.png">
+              </div>
+              <div [style.display]="animales ? 'flex' : 'none'">
+                <img src="../../assets/img/Animales.png">
+              </div>
+              <div [style.display]="numeros ? 'flex' : 'none'">
+                <img src="../../assets/img/Numeros.png">
+              </div>
+                                    
+            </ion-fab-button>
+
+            <ion-fab-list side="bottom" style="padding-top: 22px;">
+                <div [style.display]="!colores ? 'flex' : 'none'">
+                  <ion-fab-button style="height: 80px;width: 80px;" (click)="selectTema('Colores')">
+                        <ion-label>
+                          <img src="../../assets/img/Colores.png" style="padding-top: 15%;">
+                        </ion-label>          
+                  </ion-fab-button>
+                </div>
+
+                <div [style.display]="!animales ? 'flex' : 'none'">
+                  <ion-fab-button style="height: 80px;width: 80px;" (click)="selectTema('Animales')">
+                        <ion-label>
+                          <img src="../../assets/img/Animales.png" style="padding-top: 15%;">
+                        </ion-label>          
+                  </ion-fab-button>
+                </div>
+
+                <div [style.display]="!numeros ? 'flex' : 'none'">
+                  <ion-fab-button style="height: 80px;width: 80px;" (click)="selectTema('Numeros')">
+                        <ion-label>
+                          <img src="../../assets/img/Numeros.png" style="padding-top: 15%;">
+                        </ion-label>          
+                  </ion-fab-button>
+                </div>  
+          </ion-fab-list>
+          </ion-fab>
+        </div>
+    
+        <div style="width: 30%;" align="center">
+          <ion-fab style="padding-top: 5px;">
+            <ion-fab-button color="light"  style="height: 85px;width: 85px;">
+
+      
+              <div [style.display]="banderaEspa ? 'flex' : 'none'">
+                <img src="../../assets/img/españa.png">  
+              </div>
+              <div [style.display]="banderaIng ? 'flex' : 'none'">
+                <img src="../../assets/img/inglaterra.png">
+              </div>
+              <div [style.display]="banderaPor ? 'flex' : 'none'">
+                <img src="../../assets/img/portugal.png">  
+              </div>                                                                     
+
+            </ion-fab-button>
+            
+            <ion-fab-list side="bottom" style="padding-top: 20px;">
+
+                <div [style.display]="!banderaEspa ? 'flex' : 'none'">
+                  <ion-fab-button style="height: 80px;width: 80px;" (click)="selecIdioma('Español')">
+                        <ion-label>
+                          <img src="../../assets/img/españa.png" style="padding-top: 15%;">
+                        </ion-label>              
+                  </ion-fab-button>
+                </div>
+                
+                <div [style.display]="!banderaIng ? 'flex' : 'none'">
+                  <ion-fab-button style="height: 80px;width: 80px;" (click)="selecIdioma('Ingles')">
+                        <ion-label>
+                          <img src="../../assets/img/inglaterra.png" style="padding-top: 15%;">
+                        </ion-label>          
+                  </ion-fab-button>
+                </div>
+
+                <div [style.display]="!banderaPor ? 'flex' : 'none'">
+                  <ion-fab-button style="height: 80px;width: 80px;" (click)="selecIdioma('Portugues')">
+                      <ion-label>
+                        <img src="../../assets/img/portugal.png" style="padding-top: 15%;">
+                      </ion-label>
+                  </ion-fab-button> 
+                </div>              
+            </ion-fab-list>
+          </ion-fab>
+        </div>      
+
+
+        <div style="width: 30%;" align="center">         
+            <ion-fab style="padding-top: 10px;" >
+                <ion-fab-button color="danger"  style="height: 75px;width: 75px;" (click)="onLogout()">
+                    <ion-icon color="light" style="font-size: 30px;" name="exit-outline"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
+        </div>
+      </div>
+
+  <app-colores [style.display]="colores ? 'flex' : 'none'" style="height: 90%;"></app-colores> 
+  <app-numeros [style.display]="numeros ? 'flex' : 'none'" style="height: 90%;"></app-numeros>
+  <app-animales [style.display]="animales ? 'flex' : 'none'" style="height: 90%;"></app-animales> 
+
+   <div *ngIf="!load" class="spinner"></div>
 </ion-content>

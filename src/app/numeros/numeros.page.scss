@@ -1,0 +1,38 @@
+button{
+    width: 100%;
+    height: 100%; 
+    border: 4px solid black;
+    background-color: white;
+}
+
+.ion-grid-vertical{
+    height: 100%; 
+    display: flex; 
+    flex-flow: column; 
+    margin-top: 5%;
+}
+
+.ion-grid-horizontal{
+    width: 100%; 
+    display: none; 
+    flex-flow: column; 
+    margin-top: 5%;
+}
+
+@media (min-height:600px){
+    .ion-grid-vertical{
+        display: flex; 
+    }
+    .ion-grid-horizontal{
+        display: none;
+    }
+}
+
+@media(max-height: 600px){
+    .ion-grid-vertical{
+        display: none;        
+    }
+    .ion-grid-horizontal{
+        display: flex;
+    }
+}
